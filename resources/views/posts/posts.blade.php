@@ -1,0 +1,32 @@
+@extends('layouts.app')
+
+@section('content')
+
+
+{{-- <h1>Search song integrate with JOOX</h1> --}}
+
+<h2>Create Post</h2>
+
+<form action="/posts" method="POST">
+
+    @csrf
+    
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" name="title">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Body</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" name="body">
+        </div>
+    </div>
+    <button class="btn btn-danger" type="reset">Reset</button>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+    
+   
+
+@endsection
