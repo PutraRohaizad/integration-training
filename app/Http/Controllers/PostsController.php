@@ -17,6 +17,11 @@ class PostsController extends Controller
         return view('posts.posts');
     }
 
+    public function api()
+    {
+        return Post::all();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -35,16 +40,19 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $posts =  Post::all();
-
         $validatedata = $request->validate([
 
-            'titile'=> 'required',
+            'title'=> 'required',
             'body' => 'required'
         ]);
 
+        $posts = new Post;
 
-        
+        $posts->title = $request->input('title');
+        $posts->body = $request->input('body');
+        $posts->save();
+
+        return redirect('/posts');
     }
 
     /**

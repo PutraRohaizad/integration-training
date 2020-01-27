@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h1>Search song integrate with JOOX</h1>
+<h1>Search song integrate with SPOTIFY</h1>
 
 
 <form action="/post" method="POST">

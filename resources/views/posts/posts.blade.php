@@ -7,6 +7,17 @@
 
 <h2>Create Post</h2>
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
 <form action="/posts" method="POST">
 
     @csrf
@@ -26,6 +37,19 @@
     <button class="btn btn-danger" type="reset">Reset</button>
     <button class="btn btn-primary" type="submit">Submit</button>
 </form>
+
+<table class="table table-striped m-2 text-center">
+    <tr>
+        <th>No</th>
+        <th>Title</th>
+        <th>Body</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>title</td>
+        <td>body</td>
+    </tr>
+</table>
     
    
 
